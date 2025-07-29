@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bimbingan Magang</title>
+  <link href="bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <style>
+    .bg-pink-light { background-color: #FBDBFB !important; }
+    .bg-pink-sidebar { background-color: #FFC2EC !important; }
+    .bg-pink-navbar { background-color: #FF87D7 !important; }
+    .text-purple { color: #7b1fa2 !important; }
+    .bg-purple-light { background-color: #f9f0ff !important; }
+    .badge-light-green { background-color: #F0FDF4; color: #10B981; }
+    .badge-light-blue { background-color: #d9eaff; color: #1976d2; }
+    .badge-light-yellow { background-color: #fff3e0; color: #ffb300; }
+    .badge-light-orange { background-color: #fff3e0; color: #ffb300; }
+    .badge-light-purple { background-color: #d9eaff; color: #7b1fa2; }
+  </style>
+</head>
+<body class="bg-pink-light">
+
+  <div class="d-flex vh-100">
+
+    <!-- Sidebar -->
+    <nav class="d-flex flex-column flex-shrink-0 p-3 bg-pink-sidebar" style="width: 250px; margin-top: 100px;">
+      <div class="mb-3 text-secondary small fw-semibold">MENU MAGANG</div>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="dashboardmahasiswa.html" class="nav-link text-secondary">
+            <i class="bi bi-house-door-fill me-2"></i> Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="pendaftaranmagang.html" class="nav-link text-secondary">
+            <i class="bi bi-file-earmark-text me-2"></i> Pendaftaran
+          </a>
+        </li>
+        <li>
+          <a href="approvalmagang.html" class="nav-link text-secondary">
+            <i class="bi bi-check2-square me-2"></i> Approval
+          </a>
+        </li>
+        <li>
+          <a href="bimbinganmagang.html" class="nav-link active text-purple fw-semibold" aria-current="page" style="background-color: #ffffff;">
+            <i class="bi bi-chat-left-text me-2"></i> Bimbingan
+          </a>
+        </li>
+       
+        <li>
+          <a href="sertifikatmagang.html" class="nav-link text-secondary">
+            <i class="bi bi-award me-2"></i> Sertifikat
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="flex-grow-1 d-flex flex-column">
+
+      <!-- Top navbar -->
+      <header class="d-flex align-items-center justify-content-between px-4 py-3 bg-pink-navbar fixed-top" style="height: 100px; z-index: 1030; width: 100vw;">
+        <div class="d-flex align-items-center">
+          <img src="logo amikom 1.png" alt="Logo" width="32" height="32" class="me-2" />
+          <span class="fs-5 fw-bold text-white me-4">EXPERILOG</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="homepagejurnal.html" class="text-white text-decoration-none">Jurnalku</a>
+          <span class="text-white fw-bold border-bottom border-2 border-white pb-1">Magang</span>
+          <a href="notifikasipage.html" class="text-white text-decoration-none">Notifikasi</a>
+        </div>
+        <div class="d-flex align-items-center bg-white rounded-pill px-4 py-2 gap-3">
+          <img src="Ellipse.png" alt="Profile" class="rounded-circle" width="40" height="40" />
+         <button onclick="window.location.href='profilpage.html'" class="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle" type="button" aria-label="Toggle menu" style="width: 40px; height: 40px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Bimbingan content -->
+      <main class="p-4 bg-pink-light flex-grow-1 overflow-auto" style="margin-top: 100px;">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h3 class="fw-bold text-dark">Bimbingan Magang</h3>
+            <small class="text-muted">Jadwalkan dan kelola bimbingan magang dengan pembimbing</small>
+          </div>
+          <button class="btn text-white" style="background-color: #7b1fa2;">
+            <i class="bi bi-calendar-event me-2"></i> Jadwalkan Bimbingan
+          </button>
+        </div>
+
+        <div class="row g-4">
+          <!-- Left column: Informasi Mahasiswa -->
+          <div class="col-md-4">
+            <div class="bg-white rounded-3 p-4 shadow-sm">
+              <h5 class="mb-3">Informasi Mahasiswa</h5>
+              <div class="d-flex align-items-center mb-3">
+                <img src="Ellipse.png" alt="Profile" class="rounded-circle me-3" width="60" height="60" />
+                <div>
+                  <div class="fw-semibold">Gheanida Ais Putri Aziziah</div>
+                  <div class="text-muted">24.01.5209</div>
+                  <div class="text-muted">Teknik Informatika</div>
+                </div>
+              </div>
+              <p class="mb-1"><strong>Tempat Magang:</strong> PT Solusi Digital</p>
+              <p class="mb-1"><strong>Periode:</strong> 1 Feb - 30 Apr 2025</p>
+              <p class="mb-3"><strong>Pembimbing:</strong> Joko Widodo</p>
+              <span class="badge rounded-pill badge-light-green py-2 px-5">Aktif</span>
+            </div>
+          </div>
+
+          <!-- Right column: Riwayat Bimbingan -->
+          <div class="col-md-8">
+            <h5 class="mb-3">Riwayat Bimbingan</h5>
+
+            <!-- Bimbingan Minggu 1 -->
+            <div class="bg-white rounded-3 p-3 mb-3 shadow-sm">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge rounded-circle bg-light text-primary me-3" style="width: 32px; height: 32px; line-height: 32px; font-weight: 600;">15</span>
+                <div>
+                  <div class="fw-semibold">Bimbingan Minggu 1</div>
+                  <small class="text-muted">15 Feb 2025, 10:00 - 11:00</small>
+                </div>
+                <span class="badge rounded-pill badge-light-green ms-auto py-1 px-3">Selesai</span>
+              </div>
+              <div>
+                <strong>Catatan Bimbingan:</strong>
+                <p class="mb-2">Diskusi tentang progress minggu pertama. Mahasiswa telah berhasil beradaptasi dengan lingkungan kerja. Tugas selanjutnya adalah mempelajari framework yang digunakan perusahaan.</p>
+                <a href="#" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2">
+                  <i class="bi bi-file-earmark-pdf"></i> Laporan_Minggu1.pdf
+                </a>
+              </div>
+            </div>
+
+            <!-- Bimbingan Minggu 2 -->
+            <div class="bg-white rounded-3 p-3 mb-3 shadow-sm">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge rounded-circle bg-light text-primary me-3" style="width: 32px; height: 32px; line-height: 32px; font-weight: 600;">22</span>
+                <div>
+                  <div class="fw-semibold">Bimbingan Minggu 2</div>
+                  <small class="text-muted">22 Feb 2025, 10:00 - 11:00</small>
+                </div>
+                <span class="badge rounded-pill badge-light-green ms-auto py-1 px-3">Selesai</span>
+              </div>
+              <div>
+                <strong>Catatan Bimbingan:</strong>
+                <p class="mb-2">Review progress minggu kedua. Mahasiswa sudah mulai mengerjakan task pertama. Ada beberapa kendala teknis yang perlu diselesaikan. Pembimbing memberikan saran untuk pendekatan yang lebih efisien.</p>
+                <a href="#" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2">
+                  <i class="bi bi-file-earmark-pdf"></i> Laporan_Minggu2.pdf
+                </a>
+              </div>
+            </div>
+
+            <!-- Bimbingan Minggu 3 -->
+            <div class="bg-white rounded-3 p-3 shadow-sm">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge rounded-circle bg-light text-warning me-3" style="width: 32px; height: 32px; line-height: 32px; font-weight: 600;">1</span>
+                <div>
+                  <div class="fw-semibold">Bimbingan Minggu 3</div>
+                  <small class="text-muted">1 Mar 2025, 10:00 - 11:00</small>
+                </div>
+                <span class="badge rounded-pill badge-light-yellow ms-auto py-1 px-3">Upcoming</span>
+              </div>
+              <div>
+                <strong>Agenda:</strong>
+                <ol class="mb-0">
+                  <li>Review progress minggu ketiga</li>
+                  <li>Diskusi kendala yang dihadapi</li>
+                  <li>Rencana untuk minggu keempat</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

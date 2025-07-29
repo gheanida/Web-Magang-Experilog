@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Prodi</title>
+  <link href="bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Color classes from dashboarddosen.html */
+    .bg-pink-light { background-color: #FBDBFB !important; }
+    .bg-pink-sidebar { background-color: #f8bbd0 !important; }
+    .bg-pink-navbar { background-color: #FF87D7 !important; }
+    .text-purple { color: #7b1fa2 !important; }
+    .bg-purple-light { background-color: #f9f0ff !important; }
+    .badge-light-green { background-color: #F0FDF4; color: #10B981; }
+    .badge-light-blue { background-color: #d9eaff; color: #1976d2; }
+    .badge-light-yellow { background-color: #fff3e0; color: #ffb300; }
+    .badge-light-orange { background-color: #fff3e0; color: #ffb300; }
+    .badge-light-purple { background-color: #d9eaff; color: #7b1fa2; }
+  </style>
+</head>
+<body class="bg-pink-light" style="background-color: #FBDBFB !important;">
+
+  <div class="d-flex vh-100">
+
+    <!-- Sidebar -->
+    <nav class="d-flex flex-column flex-shrink-0 p-3" style="width: 250px; background-color: #FFC2EC; margin-top: 100px;">
+      <div class="mb-3 text-secondary small fw-semibold">MENU MAGANG</div>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="dashboarddosen.html" class="nav-link text-secondary">
+            <i class="bi bi-house-door-fill me-2"></i> Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="approvalmagangdosen.html" class="nav-link text-secondary">
+            <i class="bi bi-check2-square me-2"></i> Approval
+          </a>
+        </li>
+        <li>
+          <a href="penilaianmagangdosen.html" class="nav-link text-secondary">
+            <i class="bi bi-star me-2"></i> Penilaian
+          </a>
+        </li>
+        <li>
+          <a href="dataprodi.html" class="nav-link active text-purple fw-semibold" aria-current="page" style="background-color: #ffffff; color: #7b1fa2 !important;">
+            <i class="bi bi-building me-2"></i> Data Prodi
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="flex-grow-1 d-flex flex-column">
+
+      <!-- Top navbar -->
+      <header class="d-flex align-items-center justify-content-between px-4 py-3 bg-pink-navbar fixed-top" style="height: 100px; z-index: 1030; width: 100vw;">
+        <div class="d-flex align-items-center">
+          <img src="logo amikom 1.png" alt="Logo" width="32" height="32" class="me-2" />
+          <span class="fs-5 fw-bold text-white me-4">EXPERILOG</span>
+          
+        </div>
+        <div class="d-flex align-items-center gap-4">
+         
+        </div>
+        <div class="d-flex align-items-center bg-white rounded-pill px-4 py-2 gap-3">
+          <img src="Ellipse.png" alt="Profile" class="rounded-circle" width="40" height="40" />
+          <button onclick="window.location.href='profilpage.html'" class="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle" type="button" aria-label="Toggle menu" style="width: 40px; height: 40px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="p-4 bg-pink-light flex-grow-1 overflow-auto" style="margin-top: 100px; background-color: #FBDBFB !important;">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="fw-bold text-dark">Data Monitoring Magang</h4>
+          <button class="btn btn-primary">
+            <i class="bi bi-file-earmark-arrow-down me-2"></i> Export
+          </button>
+        </div>
+
+        <!-- Summary cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3">
+            <div class="card p-3 bg-white">
+              <h6>Total Mahasiswa</h6>
+              <h4><strong>128</strong></h4>
+              <small class="text-success">&#9679; 42 selesai</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card p-3 bg-white">
+              <h6>Tempat Magang</h6>
+              <h4><strong>35</strong></h4>
+              <small class="text-primary">&#9679; 12 perusahaan baru</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card p-3 bg-white">
+              <h6>Rata-rata Nilai</h6>
+              <h4><strong>85.7</strong></h4>
+              <small class="text-success">&#9679; Naik 2.3 poin</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card p-3 bg-white">
+              <h6>Perlu Perhatian</h6>
+              <h4><strong>8</strong></h4>
+              <small class="text-danger">&#9679; 3 kasus baru</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts and table -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <div class="card p-3 bg-white">
+              <h6>Distribusi Mahasiswa per Prodi</h6>
+              <canvas id="pieChart" width="150" height="150"></canvas>
+              <ul class="list-unstyled small mt-3 mb-0">
+                <li><span class="badge rounded-pill badge-light-purple me-2" style="width: 12px; height: 12px;">&nbsp;</span> Teknik Informatika (45)</li>
+                <li><span class="badge rounded-pill badge-light-green me-2" style="width: 12px; height: 12px;">&nbsp;</span> Sistem Informasi (38)</li>
+                <li><span class="badge rounded-pill badge-light-yellow me-2" style="width: 12px; height: 12px;">&nbsp;</span> Manajemen Bisnis (25)</li>
+                <li><span class="badge rounded-pill badge-light-orange me-2" style="width: 12px; height: 12px;">&nbsp;</span> Lainnya (20)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card p-3 bg-white">
+              <h6>Tren Magang per Bulan</h6>
+              <canvas id="barChart" width="350" height="250"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5>Daftar Mahasiswa Magang</h5>
+            <form class="d-flex" role="search" onsubmit="return false;">
+              <input class="form-control form-control-sm" type="search" placeholder="Cari mahasiswa..." aria-label="Search" />
+            </form>
+          </div>
+          <table class="table table-hover bg-white rounded-3">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Program Studi</th>
+                <th>Tempat Magang</th>
+                <th>Status</th>
+                <th>Nilai</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Andi Saputra</td>
+                <td>19201234</td>
+                <td>Teknik Informatika</td>
+                <td>PT Solusi Digital</td>
+                <td><span class="badge rounded-pill badge-light-green">Selesai</span></td>
+                <td>87</td>
+              </tr>
+              <tr>
+                <td>Siti Nurhaliza</td>
+                <td>19205678</td>
+                <td>Sistem Informasi</td>
+                <td>Bank Digital Indonesia</td>
+                <td><span class="badge rounded-pill badge-light-blue">Aktif</span></td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Rudi Hartono</td>
+                <td>19209012</td>
+                <td>Teknik Elektro</td>
+                <td>PT Listrik Negara</td>
+                <td><span class="badge rounded-pill badge-light-yellow" style="background-color:#FEE2E2; color:#EF4444;">Ditolak</span></td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Dewi Safitri</td>
+                <td>19203456</td>
+                <td>Manajemen Bisnis</td>
+                <td>CV Mitra Dagang</td>
+                <td><span class="badge rounded-pill badge-light-orange">Revisi</span></td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const pieCtx = document.getElementById('pieChart').getContext('2d');
+    const pieChart = new Chart(pieCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Teknik Informatika', 'Sistem Informasi', 'Manajemen Bisnis', 'Lainnya'],
+        datasets: [{
+          data: [45, 38, 25, 20],
+          backgroundColor: ['#7b1fa2', '#10B981', '#ffb300', '#1976d2'],
+          borderColor: '#fff',
+          borderWidth: 3,
+          cutout: '70%',
+        }]
+      },
+      options: {
+        responsive: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            enabled: true
+          }
+        }
+      }
+    });
+
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    const barChart = new Chart(barCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul'],
+        datasets: [{
+          label: 'Jumlah Magang',
+          data: [70, 100, 130, 160, 190, 130, 100],
+          backgroundColor: '#1976d2',
+          borderRadius: 4,
+          barPercentage: 0.5,
+          categoryPercentage: 0.5,
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 200,
+            ticks: {
+              stepSize: 50
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            enabled: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

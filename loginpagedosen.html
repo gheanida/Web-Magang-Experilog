@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+</head>
+<body class="d-flex align-items-center" style="height: 100vh; background-color: #ff7acb;">
+
+  <div class="container">
+    <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+      <!-- Left illustration -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <img src="smart-people.png" alt="Illustration" class="img-fluid" style="max-height: 500px; object-fit: contain;" />
+      </div>
+
+      <!-- Right card -->
+      <div class="col-md-5 d-flex justify-content-center">
+        <div class="card bg-light bg-opacity-75 shadow rounded" style="width: 400px; height: 500px; max-height: 100vh; overflow-y: auto;">
+          <div class="card-body d-flex flex-column justify-content-center py-3">
+            <h3 class="card-title mb-5 text-center">EXPERILOG</h3>
+            <h4 class="mb-2 text-left">Masuk</h4>
+            <p class="text-left mb-5">Halo, Selamat Datang</p>
+            <form>
+              <div class="mb-4">
+                <input type="email" class="form-control" placeholder="Email" required />
+              </div>
+              <div class="mb-3 position-relative">
+                <input type="password" class="form-control" id="password" placeholder="Password" required />
+                <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-2" onclick="togglePassword('password', this)" aria-label="Toggle password visibility">🔒</button>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rememberMe" />
+                  <label class="form-check-label" for="rememberMe" style="font-size: 0.9rem;">
+                    Ingat Saya
+                  </label>
+                </div>
+                <a href="#" class="text-decoration-none" style="font-size: 0.9rem;">Lupa Password ?</a>
+              </div>
+              <a href="dashboarddosen.html" class="btn btn-dark w-100 mb-3">Masuk</a>
+            </form>
+            <p class="text-center mb-3" style="font-size: 0.9rem;">
+              Tidak punya akun ? <a href="registerpagedosen.html"><strong>Daftar</strong></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function togglePassword(id, btn) {
+      const input = document.getElementById(id);
+      if (input.type === "password") {
+        input.type = "text";
+        btn.textContent = "🔓";
+      } else {
+        input.type = "password";
+        btn.textContent = "🔒";
+      }
+    }
+  </script>
+</body>
+</html>
